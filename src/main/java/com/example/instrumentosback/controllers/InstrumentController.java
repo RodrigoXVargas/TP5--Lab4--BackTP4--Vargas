@@ -15,32 +15,5 @@ import java.util.List;
 @Slf4j
 @RequestMapping(path = "/api/instrumentos")
 public class InstrumentController extends BaseControllerImpl<Instrumento, ServiceInstrumentImpl> {
-
-    /*@Autowired
-    private ServiceInstrument serviceInstrument;
-
-    @GetMapping(value = "/instrumentos")
-    public List<Instrumento> getInstrumentos() throws Exception {
-        List<Instrumento> instrumentos;
-        try{
-            instrumentos = serviceInstrument.findAll();
-        }catch (Exception e){
-            log.info(e.getMessage(),e);
-            throw new Exception(e.getMessage());
-        }
-        return instrumentos;
-    }
-
-    @GetMapping(value = "/instrumentos/{id}")
-    public Instrumento getDetails(@PathVariable("id") Long id) throws Exception{
-        Instrumento instrumento;
-        try{
-            instrumento = this.serviceInstrument.findById(id);
-        }catch (Exception e){
-            log.info(e.getMessage(),e);
-            throw new Exception(e.getMessage());
-        }
-        return instrumento;
-    }
-*/
+    
 }

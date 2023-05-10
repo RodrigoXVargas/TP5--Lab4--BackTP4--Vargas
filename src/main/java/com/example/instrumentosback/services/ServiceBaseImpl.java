@@ -46,4 +46,46 @@ public abstract class ServiceBaseImpl<E extends Base, ID extends Serializable> i
             throw new Exception(e.getMessage());
         }
     }
+
+    @Override
+    @Transactional
+    public E saveOne(E entity) throws Exception {
+        try {
+            entity = repositoryBase.save(entity);
+            return entity;
+        } catch (Exception e) {
+            log.info(e.getMessage());
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    @Override
+    @Transactional
+    public E updateOne(E entity, ID id) throws Exception {
+        try {
+            Optional<E> entityOptional = repositoryBase.findById(id);
+            E entityUpdate = entityOptional.get();
+            entityUpdate = repositoryBase.save(entity);
+            return entityUpdate;
+        } catch (Exception e) {
+            log.info(e.getMessage());
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    @Override
+    @Transactional
+    public boolean deleteById(ID id) throws Exception {
+        try {
+            if (repositoryBase.existsById(id)) {
+                repositoryBase.deleteById(id);
+                return true;
+            } else {
+                throw new Exception();
+            }
+        } catch (Exception e) {
+            log.info(e.getMessage());
+            throw new Exception(e.getMessage());
+        }
+    }
 }

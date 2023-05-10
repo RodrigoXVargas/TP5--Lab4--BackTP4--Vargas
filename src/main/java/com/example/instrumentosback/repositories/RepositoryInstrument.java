@@ -11,10 +11,6 @@ import java.util.Optional;
 @Repository
 public interface RepositoryInstrument extends RepositoryBase<Instrumento, Long>{
 
-    @Query( value = "SELECT * FROM instrumentos", nativeQuery = true)
-    List<Instrumento> findAll( );
 
-    @Query( value = "SELECT * FROM instrumentos WHERE instrumentos.id = :id", nativeQuery = true)
-    Optional<Instrumento> findById(@Param("id") Long id);
 
 }
