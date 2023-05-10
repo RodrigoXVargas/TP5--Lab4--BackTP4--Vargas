@@ -13,10 +13,10 @@ import java.util.List;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @Slf4j
-@RequestMapping(path = "/api")
+@RequestMapping(path = "/api/instrumentos")
 public class InstrumentController extends BaseControllerImpl<Instrumento, ServiceInstrumentImpl> {
 
-    @Autowired
+    /*@Autowired
     private ServiceInstrument serviceInstrument;
 
     @GetMapping(value = "/instrumentos")
@@ -42,5 +42,5 @@ public class InstrumentController extends BaseControllerImpl<Instrumento, Servic
         }
         return instrumento;
     }
-
+*/
 }
