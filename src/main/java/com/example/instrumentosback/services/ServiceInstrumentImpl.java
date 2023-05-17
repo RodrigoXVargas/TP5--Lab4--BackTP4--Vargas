@@ -18,30 +18,6 @@ public class ServiceInstrumentImpl extends ServiceBaseImpl<Instrumento, Long> im
         super( repositoryBase );
     }
 
-    @Autowired
-    private RepositoryInstrument repositoryInstrument;
-
-    @Override
-    public List<Instrumento> findAll() throws Exception {
-        try{
-            List<Instrumento> instrumentos = repositoryInstrument.findAll();
-            return instrumentos;
-        }catch (Exception e){
-            log.info(e.getMessage(),e);
-            throw new Exception(e.getMessage());
-        }
-    }
-
-    @Override
-    public Instrumento findById(Long id) throws Exception {
-        try{
-            Optional<Instrumento> instrumento = repositoryInstrument.findById(id);
-            return instrumento.get();
-        }catch (Exception e){
-            log.info(e.getMessage(),e);
-            throw new Exception(e.getMessage());
-        }
-    }
 
 
 }
