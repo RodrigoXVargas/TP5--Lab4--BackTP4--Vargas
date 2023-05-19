@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Slf4j
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 @RequestMapping(path = "/api/instrumentos")
 public class InstrumentController extends BaseControllerImpl<Instrumento, ServiceInstrumentImpl> {
 
